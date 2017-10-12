@@ -1,95 +1,127 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+          <h1>Knowledgebase Search</h1>
+          <p>
+            Welcome to our knowledgebase. You can use the search bar below to find help, or the categories at the bottom.
+          </p>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button"><i class="fa fa-fw fa-search"></i> Search</button>
+              </span>
             </div>
+          </div>
         </div>
-    </body>
-</html>
+      </div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <h1 class="display-4 mb-4">
+        Categories
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+      <div class="card-group">
+
+        <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item A (2)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item A
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+        <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item B (4)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item B
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item C (1)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item C
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+      <div class="card-group">
+
+        <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item D (8)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item D
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+        <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item E (7)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item E
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">
+            Item F (10)
+          </h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            With this Item F
+          </h6>
+          <a href="#">View Category</a>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+@endsection
