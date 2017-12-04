@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/')->uses('HomeController@index')->name('home');
 
 
 // Authentication

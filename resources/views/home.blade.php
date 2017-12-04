@@ -20,108 +20,37 @@
         </div>
       </div>
 
-<div class="container">
+    <div class="container">
 
-  <div class="row">
-    <div class="col">
-      <h1 class="display-4 mb-4">
-        Categories
-      </h1>
+        <div class="row">
+            <div class="col">
+                <h1 class="display-4 mb-4">
+                    Categories
+                </h1>
+            </div>
+        </div>
+
+        @foreach($categories->chunk(3) as $chunk)
+            <div class="row">
+                @foreach($chunk as $category)
+                    <div class="col">
+                        <div class="card-group">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        {{ $category->name}} ({{ $category->articles->count() }})
+                                    </h4>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        description
+                                    </h6>
+                                    <a href="#">View Category</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endforeach
+
     </div>
-  </div>
-
-  <div class="row">
-
-    <div class="col">
-      <div class="card-group">
-
-        <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item A (2)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item A
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-        <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item B (4)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item B
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item C (1)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item C
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-  </div>
-
-  <div class="row">
-
-    <div class="col">
-      <div class="card-group">
-
-        <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item D (8)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item D
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-        <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item E (7)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item E
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">
-            Item F (10)
-          </h4>
-          <h6 class="card-subtitle mb-2 text-muted">
-            With this Item F
-          </h6>
-          <a href="#">View Category</a>
-        </div>
-      </div>
-
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
 @endsection
