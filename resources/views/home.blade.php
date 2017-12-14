@@ -43,7 +43,7 @@
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         description
                                     </h6>
-                                    <a href="#">View Category</a>
+                                    <a href="{{ route('category.view', $category) }}">View Category</a>
                                 </div>
                             </div>
                         </div>

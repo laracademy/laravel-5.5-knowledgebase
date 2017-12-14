@@ -12,6 +12,7 @@
 */
 
 Route::get('/')->uses('HomeController@index')->name('home');
+Route::get('/category/view/{category}')->uses('CategoryController@view')->name('category.view');
 
 
 // Authentication
