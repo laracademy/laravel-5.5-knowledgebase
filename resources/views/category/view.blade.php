@@ -18,7 +18,7 @@
                 <ul class="list-group">
                     @foreach($category->articles as $article)
                         <li class="list-group-item">
-                            <a href="#">
+                            <a href="{{ route('article.view', $article) }}">
                                 <h4>
                                     {{ $article->title }}
                                 </h4>

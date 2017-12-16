@@ -13,6 +13,7 @@
 
 Route::get('/')->uses('HomeController@index')->name('home');
 Route::get('/category/view/{category}')->uses('CategoryController@view')->name('category.view');
+Route::get('/article/view/{article}')->uses('ArticleController@view')->name('article.view');
 
 
 // Authentication
