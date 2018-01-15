@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{ $article->content }}
+                {!! $article->toHtml() !!}
             </div>
         </div>
     </div>

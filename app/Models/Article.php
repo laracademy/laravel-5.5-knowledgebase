@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Parsedown;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
     protected $fillable = [
-        'title', 'markdown', 'active',
+        'title', 'content', 'active',
     ];
 
     protected $casts = [
@@ -17,5 +18,12 @@ class Article extends Model
     public function categories()
     {
         return $this->belongsToMany(\App\Models\Category::class, 'article_category', 'article_id', 'category_id');
+    }
+
+    // helpers
+
+    public function toHtml()
+    {
+        return Parsedown::instance()->text($this->content);
     }
 }
