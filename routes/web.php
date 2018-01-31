@@ -21,8 +21,6 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
-    Route::get('', function() {
-        return 'You are now logged into the system';
-    })->name('dashboard');
+Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function() {
+    Route::get('')->uses('DashboardController@index')->name('dashboard');
 });
