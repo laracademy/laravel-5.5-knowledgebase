@@ -23,4 +23,9 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' => 'auth'], function() {
     Route::get('')->uses('DashboardController@index')->name('dashboard');
+
+    Route::group(['prefix' => 'Category'], function() {
+        Route::get('create')->uses('CategoryController@create')->name('dashboard.category.create');
+        Route::post('store')->uses('CategoryController@store')->name('dashboard.category.store');
+    });
 });

@@ -12,6 +12,9 @@
 
         <div class="row mt-3">
             <div class="col">
+                <div class="text-right py-2">
+                    <a href="{{ route('dashboard.category.create') }}" class="btn btn-primary">Create Category</a>
+                </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
                         <tr>
