@@ -30,5 +30,7 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
 
         Route::get('edit/{category}')->uses('CategoryController@edit')->name('dashboard.category.edit');
         Route::post('update/{category}')->uses('CategoryController@update')->name('dashboard.category.update');
+
+        Route::get('destroy/{category}')->uses('CategoryController@destroy')->name('dashboard.category.destroy');
     });
 });

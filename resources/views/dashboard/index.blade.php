@@ -41,8 +41,7 @@
                                     {{ $category->articles()->count() }}
                                 </td>
                                 <td>
-                                    <a href="#" class="btn btn-danger">Delete</a>
-                                    <a href="#" class="btn btn-info">Edit</a>
+                                    <a href="{{ route('dashboard.category.destroy', $category) }}" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
                                     <a href="{{ route('dashboard.category.edit', $category) }}" class="btn btn-info">Edit</a>
                                     <a href="#" class="btn btn-primary">View</a>
                                 </td>

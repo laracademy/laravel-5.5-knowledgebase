@@ -18,4 +18,12 @@ class Category extends Model
     {
         return $this->belongsToMany(\App\Models\Article::class, 'article_category', 'category_id', 'article_id');
     }
+
+    // events
+    static public function boot()
+    {
+        Category::deleting(function ($category) {
+            $category->articles()->detach();
+        });
+    }
 }
