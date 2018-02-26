@@ -43,6 +43,7 @@
                                 <td>
                                     <a href="#" class="btn btn-danger">Delete</a>
                                     <a href="#" class="btn btn-info">Edit</a>
+                                    <a href="{{ route('dashboard.category.edit', $category) }}" class="btn btn-info">Edit</a>
                                     <a href="#" class="btn btn-primary">View</a>
                                 </td>
                             </tr>

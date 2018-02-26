@@ -27,5 +27,8 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
     Route::group(['prefix' => 'Category'], function() {
         Route::get('create')->uses('CategoryController@create')->name('dashboard.category.create');
         Route::post('store')->uses('CategoryController@store')->name('dashboard.category.store');
+
+        Route::get('edit/{category}')->uses('CategoryController@edit')->name('dashboard.category.edit');
+        Route::post('update/{category}')->uses('CategoryController@update')->name('dashboard.category.update');
     });
 });

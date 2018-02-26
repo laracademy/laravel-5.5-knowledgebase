@@ -28,4 +28,25 @@ class CategoryController extends Controller
 
         return redirect()->route('dashboard');
     }
+
+    public function edit(Category $category)
+    {
+        return view('dashboard.category.edit', compact('category'));
+    }
+
+    public function update(Category $category)
+    {
+        $rules = [
+            'name' => 'required',
+        ];
+
+        // perform validation
+        $this->validate(request(), $rules);
+
+        // update category
+        $category->fill(request()->only('name'));
+        $category->save();
+
+        return redirect()->route('dashboard');
+    }
 }
