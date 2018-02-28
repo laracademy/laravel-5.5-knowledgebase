@@ -33,7 +33,7 @@
                         @foreach($categories as $category)
                             <tr>
                                 <td>
-                                    <a href="#">
+                                    <a href="{{ route('dashboard.articles.index', $category) }}">
                                         {{ $category->name }}
                                     </a>
                                 </td>
@@ -43,7 +43,7 @@
                                 <td>
                                     <a href="{{ route('dashboard.category.destroy', $category) }}" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
                                     <a href="{{ route('dashboard.category.edit', $category) }}" class="btn btn-info">Edit</a>
-                                    <a href="#" class="btn btn-primary">View</a>
+                                    <a href="{{ route('dashboard.articles.index', $category) }}" class="btn btn-primary">View</a>
                                 </td>
                             </tr>
                         @endforeach

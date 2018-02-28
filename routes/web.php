@@ -33,4 +33,8 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
 
         Route::get('destroy/{category}')->uses('CategoryController@destroy')->name('dashboard.category.destroy');
     });
+
+    Route::group(['prefix' => 'articles'], function() {
+        Route::get('/{category}')->uses('ArticleController@index')->name('dashboard.articles.index');
+    });
 });
