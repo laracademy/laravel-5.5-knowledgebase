@@ -24,7 +24,7 @@
                             <th class="text-right">
                                 Article Count
                             </th>
-                            <th>
+                            <th class="text-right">
                                 Actions
                             </th>
                         </tr>
@@ -40,10 +40,9 @@
                                 <td class="text-right">
                                     {{ $category->articles()->count() }}
                                 </td>
-                                <td>
+                                <td class="text-right">
                                     <a href="{{ route('dashboard.category.destroy', $category) }}" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
                                     <a href="{{ route('dashboard.category.edit', $category) }}" class="btn btn-info">Edit</a>
-                                    <a href="{{ route('dashboard.articles.index', $category) }}" class="btn btn-primary">View</a>
                                 </td>
                             </tr>
                         @endforeach

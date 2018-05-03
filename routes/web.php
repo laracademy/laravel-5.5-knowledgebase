@@ -32,9 +32,20 @@ Route::group(['prefix' => 'dashboard', 'namespace' => 'Dashboard', 'middleware' 
         Route::post('update/{category}')->uses('CategoryController@update')->name('dashboard.category.update');
 
         Route::get('destroy/{category}')->uses('CategoryController@destroy')->name('dashboard.category.destroy');
+
+        Route::get('attach/{category}')->uses('CategoryController@attach')->name('dashboard.category.attach');
+        Route::post('attachArticle/{category}')->uses('CategoryController@attachArticle')->name('dashboard.category.article.save');
     });
 
     Route::group(['prefix' => 'articles'], function() {
+        Route::get('/create/{category}')->uses('ArticleController@create')->name('dashboard.articles.create');
+        Route::post('/store/{category}')->uses('ArticleController@store')->name('dashboard.articles.store');
+
+        Route::get('/edit/{article}/{category}')->uses('ArticleController@edit')->name('dashboard.articles.edit');
+        Route::post('/update/{article}')->uses('ArticleController@update')->name('dashboard.articles.update');
+
+        Route::get('destroy/{article}/{category}')->uses('ArticleController@destroy')->name('dashboard.articles.destroy');
+
         Route::get('/{category}')->uses('ArticleController@index')->name('dashboard.articles.index');
     });
 });

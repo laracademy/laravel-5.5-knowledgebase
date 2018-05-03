@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Models\Article;
 use App\Models\Category;
 use App\Http\Controllers\Controller;
 
@@ -55,5 +56,19 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('dashboard');
+    }
+
+    public function attach(Category $category)
+    {
+        $articles = Article::orderBy('title')->get();
+
+        return view('dashboard.category.attach', compact('articles', 'category'));
+    }
+
+    public function attachArticle(Category $category)
+    {
+        $category->articles()->attach(request('article'));
+
+        return redirect()->route('dashboard.articles.index', $category);
     }
 }

@@ -12,7 +12,7 @@
             </li>
             @if(auth()->check())
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa fa-fw fa-dashboard"></i> Administration</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}"><i class="fa fa-fw fa-dashboard"></i> Administration</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="logout(); return false;"><i class="fa fa-fw fa-unlock"></i> Logout</a>

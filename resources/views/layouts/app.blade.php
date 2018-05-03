@@ -12,6 +12,8 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @stack('style')
 </head>
 <body>
 
@@ -47,5 +49,6 @@
             }
         </script>
     @endif
+    @stack('script')
 </body>
 </html>

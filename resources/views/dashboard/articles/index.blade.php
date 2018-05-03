@@ -13,7 +13,8 @@
         <div class="row mt-3">
             <div class="col">
                 <div class="text-right py-2">
-                    <a href="#" class="btn btn-primary">Create Article</a>
+                    <a href="{{ route('dashboard.category.attach', $category) }}" class="btn btn-info">Attach Article</a>
+                    <a href="{{ route('dashboard.articles.create', $category) }}" class="btn btn-primary">Create Article</a>
                 </div>
                 <table class="table table-striped table-hover table-bordered">
                     <thead>
@@ -21,7 +22,7 @@
                             <th width="75%">
                                 Title
                             </th>
-                            <th>
+                            <th class="text-right">
                                 Actions
                             </th>
                         </tr>
@@ -30,14 +31,13 @@
                         @foreach($category->articles->sortBy('title') as $article)
                             <tr>
                                 <td>
-                                    <a href="#">
+                                    <a href="{{ route('dashboard.articles.edit', [$article, $category]) }}">
                                         {{ $article->title }}
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="#" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
-                                    <a href="#" class="btn btn-info">Edit</a>
-                                    <a href="#" class="btn btn-primary">View</a>
+                                <td class="text-right">
+                                    <a href="{{ route('dashboard.articles.destroy', [$article, $category]) }}" class="btn btn-danger" onclick="return confirm('Are you sure?');">Delete</a>
+                                    <a href="{{ route('dashboard.articles.edit', [$article, $category]) }}" class="btn btn-info">Edit</a>
                                 </td>
                             </tr>
                         @endforeach
